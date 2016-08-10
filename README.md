@@ -6,12 +6,14 @@ Códigos disponíveis para JavaScript (vanilla) e jQuery.
 
 Abaixo segue as principais funcionalidades do script.
 
-##
+----------
 
 # Funcionalidade para Estados: 
 
- * Retorno dos Estados através do Nome ou da Sigla;
- * Marcar o Estado no campo de SELECT do HTML;
+> **Dados:**
+
+> - Retorno dos Estados através do Nome ou da Sigla;
+> - Marcar o Estado no campo de SELECT do HTML;
 
 
 OBS: O retorno é impresso em um SELECT.
@@ -28,7 +30,7 @@ Resultado final:
 <option value="BA">Bahia</option>
 ```
 
-##
+----------
 
 Usando a opção **true** no *text*, o nome do Estado será retornado em **sigla**, exemplo:
 
@@ -43,8 +45,7 @@ Resultado final:
 <option value="BA">Bahia</option>
 ```
 
-##
-
+----------
 
 Usando a opção **true** no *value*, o nome do Estado será retornado em **extenso**, exemplo:
 
@@ -59,7 +60,7 @@ Resultado final:
 <option value="BA">Bahia</option>
 ```
 
-##
+----------
 
 A combinação do *value* e do *text* podem variar o retorno no SELECT, exemplo:
 
@@ -75,7 +76,7 @@ Resultado final:
 <option value="Bahia">BA</option>
 ```
 
-##
+----------
 
 Existe a possibilidade de marcar o Estado como padrão usando o *current*, exemplo:
 
@@ -96,7 +97,7 @@ document.getElementById("select").states({
 });
 ```
 
-##
+----------
 
 Outra opcão de retorno pode ser usando **states.Array()** fora do objeto SELECT do HTML. Segue exemplo no console:
 
@@ -105,12 +106,14 @@ var retorno = states.Array();
 console.log(retorno);
 ```
 
-##
+----------
 
 # Funcionalidade para Cidades: 
 
- * Retorno das Cidades através da Sigla;
- * Marcar o Estado no campo de SELECT do HTML;
+> **Dados:**
+
+> - Retorno das Cidades através da Sigla;
+> - Marcar a Cidade no campo de SELECT do HTML;
 
 
 Por padrão, usando o método .city(), exemplo:
@@ -124,7 +127,7 @@ Resultado final é um lista de cidades:
 <option value="Salvador">Salvador</option>
 ```
 
-##
+----------
 
 Usando as siglas dos Estados *states*, você pode retornar as cidades, exemplo:
 
@@ -139,7 +142,7 @@ Resultado final:
 <option value="Salvador">Salvador</option>
 ```
 
-##
+----------
 
 Para marcar uma cidade, ou usar ela como padrão use o nome da cidade (com acento se tiver) no *current*:
 
@@ -155,7 +158,7 @@ Resultado final:
 <option selected="selected" value="Eunápolis">Eunápolis</option>
 ```
 
-##
+----------
 
 Outra opcão de retorno pode ser usando **city.Array()** (só retorna as cidades do Estado) fora do objeto SELECT do HTML. Segue exemplo no console:
 
@@ -163,5 +166,3 @@ Outra opcão de retorno pode ser usando **city.Array()** (só retorna as cidades
 var retorno = city.Array({states: "BA"}); // BA ou ba
 console.log(retorno);
 ```
-
-##
