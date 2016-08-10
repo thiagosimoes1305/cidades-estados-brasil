@@ -8,7 +8,7 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-# Funcionalidade para Estados: 
+## Funcionalidade para Estados: 
 
 > **Dados:**
 
@@ -108,7 +108,7 @@ console.log(retorno);
 
 ----------
 
-# Funcionalidade para Cidades: 
+## Funcionalidade para Cidades: 
 
 > **Dados:**
 
