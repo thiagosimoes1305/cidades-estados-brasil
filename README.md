@@ -8,7 +8,7 @@ Abaixo segue as principais funcionalidades do script.
 
 ##
 
-### Funcionalidade para Estados: 
+# Funcionalidade para Estados: 
 
  * Retorno dos Estados através do Nome ou da Sigla;
  * Marcar o Estado no campo de SELECT do HTML;
@@ -107,8 +107,7 @@ console.log(retorno);
 
 ##
 
-
-### Funcionalidade para Cidades: 
+# Funcionalidade para Cidades: 
 
  * Retorno das Cidades através da Sigla;
  * Marcar o Estado no campo de SELECT do HTML;
