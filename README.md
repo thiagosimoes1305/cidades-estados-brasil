@@ -107,7 +107,7 @@ console.log(retorno);
 
 ### Funcionalidade para Cidades: 
 
- * Retorno dos Estados através do Nome ou da Sigla;
+ * Retorno das Cidades através da Sigla;
  * Marcar o Estado no campo de SELECT do HTML;
 
 
