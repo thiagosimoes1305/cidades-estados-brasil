@@ -2,7 +2,7 @@
 
 Código criado em JavaScript para retornar as Cidades e Estados brasileiros.
 
-Códigos disponíves para JavaScript (vanilla) e jQuery.
+Códigos disponíveis para JavaScript (vanilla) e jQuery.
 
 Abaixo segue as principais funcionalidades do script.
 
