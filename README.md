@@ -3,6 +3,7 @@
 Código criado em JavaScript para retornar as Cidades e Estados brasileiros.
 Abaixo segue as principais funcionalidades do script.
 
+##
 
 ### Funcionalidade para Estados: 
 
@@ -12,7 +13,6 @@ Abaixo segue as principais funcionalidades do script.
 
 OBS: O retorno é impresso em um SELECT.
 
-##
 
 Por padrão, usando o método .states(), exemplo:
 
@@ -109,3 +109,57 @@ console.log(retorno);
 
  * Retorno dos Estados através do Nome ou da Sigla;
  * Marcar o Estado no campo de SELECT do HTML;
+
+
+Por padrão, usando o método .city(), exemplo:
+
+```javascript
+document.getElementById("select").city();
+```
+
+Resultado final é um lista de cidades:
+```html
+<option value="Salvador">Salvador</option>
+```
+
+##
+
+Usando as siglas dos Estados *states*, você pode retornar as cidades, exemplo:
+
+```javascript
+document.getElementById("select").states({
+	states: "BA"
+});
+```
+
+Resultado final:
+```html
+<option value="Salvador">Salvador</option>
+```
+
+##
+
+Para marcar uma cidade, ou usar ela como padrão use o nome da cidade (com acento se tiver) no *current*:
+
+```javascript
+document.getElementById("select").states({
+	states: "BA",
+    current: "Eunápolis"
+});
+```
+
+Resultado final:
+```html
+<option selected="selected" value="Eunápolis">Eunápolis</option>
+```
+
+##
+
+Outra opcão de retorno pode ser usando **city.Array()** (só retorna as cidades do Estado) fora do objeto SELECT do HTML. Segue exemplo no console:
+
+```javascript
+var retorno = city.Array({states: "BA"}); // BA ou ba
+console.log(retorno);
+```
+
+##
