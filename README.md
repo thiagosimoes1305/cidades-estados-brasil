@@ -22,12 +22,12 @@ document.getElementById("select").states();
 
 Resultado final:
 ```html
-<option value="Bahia">BA</option>
+<option value="BA">Bahia</option>
 ```
 
 ##
 
-Usando a opção **true** no *text*, o nome do Estado será retornado por **extenso**, exemplo:
+Usando a opção **true** no *text*, o nome do Estado será retornado em **sigla**, exemplo:
 
 ```javascript
 document.getElementById("select").states({
@@ -37,13 +37,13 @@ document.getElementById("select").states({
 
 Resultado final:
 ```html
-<option value="Bahia">Bahia</option>
+<option value="BA">Bahia</option>
 ```
 
 ##
 
 
-Usando a opção **true** no *value*, o nome do Estado será retornado em **sigla**, exemplo:
+Usando a opção **true** no *value*, o nome do Estado será retornado em **extenso**, exemplo:
 
 ```javascript
 document.getElementById("select").states({
@@ -53,7 +53,7 @@ document.getElementById("select").states({
 
 Resultado final:
 ```html
-<option value="BA">BA</option>
+<option value="BA">Bahia</option>
 ```
 
 ##
@@ -69,7 +69,7 @@ document.getElementById("select").states({
 
 Resultado final:
 ```html
-<option value="BA">Bahia</option>
+<option value="Bahia">BA</option>
 ```
 
 ##
