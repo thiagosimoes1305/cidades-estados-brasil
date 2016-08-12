@@ -1,6 +1,6 @@
 ﻿/*
  * Cidades e Estados Brasileiros
- * Example and Documentation: http://tedk.com.br/blog/
+ * Example and Documentation: https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md
  *
  * Version: 1.0
  * Require: jQuery 1.8+
