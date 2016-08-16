@@ -57,7 +57,7 @@ document.getElementById("select").states({
 
 Resultado final:
 ```html
-<option value="BA">Bahia</option>
+<option value="Bahia">Bahia</option>
 ```
 
 ----------
