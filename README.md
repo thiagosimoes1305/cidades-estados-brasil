@@ -9,7 +9,7 @@ Abaixo segue as principais funcionalidades do script.
 
 > **Estados:**
 
-> - [Retorno de todos os Estados](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md "Retorno de todos os Estados");
+> - [Retorno de todos os Estados](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#retornando-os-estados);
 > - Marcar o Estado na lista;
 > - Escolha do texto option padrão, exemplo: "Selecione um Estado";
 > - Alternar os nomes dos Estados por sigla ou por extenso.
@@ -17,7 +17,7 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-### **Retornando os Estados:**
+#### **Retornando os Estados:**
 
 *Através do **elementID** você coloca o ID do SELECT*.
 ```javascript
