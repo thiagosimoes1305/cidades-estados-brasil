@@ -147,11 +147,11 @@ function returnError(){
 			states: {
 				elementID: false,
 				current: false,
+				initial: false,
 				arguments: {
 		        	before: false,
 		        	after: false,
-		        	defaultOption: false,
-		        	initial: false
+		        	defaultOption: false
 		        },
 		        defaultOption: false
 			},
@@ -194,9 +194,9 @@ function returnError(){
 
 			array_estados.forEach(function(value){
 				var xCurrent = (states_current == value[0].toUpperCase()) ? 'selected="selected"' : (states_current == value[1].toUpperCase()) ? 'selected="selected"' : '';
+				var initial = (defaults.states.initial) ? value[0] : value[1];
 				if (states_element){
 					if (states_element.before != undefined && states_element.after != undefined){
-						var initial = (states_element.initial) ? value[0] : value[1];
 						states_print += states_element.before.slice(0, -1) + " data-value='" + initial + "'>" + initial + states_element.after;
 					}
 					else {
@@ -204,7 +204,7 @@ function returnError(){
 					}
 				}
 				else {
-					states_print += '<option ' + xCurrent + ' value="' + value[0] + '">' + value[1] + '</option>';
+					states_print += '<option ' + xCurrent + ' value="' + initial + '">' + initial + '</option>';
 				}
 			});
 
