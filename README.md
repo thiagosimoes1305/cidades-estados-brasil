@@ -87,9 +87,9 @@ new statesCitiesBR({
 	states: {
 		elementID: "lista_estado",
 		arguments: {
-        	before: "<li>",
-        	after: "</li>",
-        }
+			before: "<li>",
+			after: "</li>",
+		}
 	}
 });
 ```
@@ -104,10 +104,10 @@ new statesCitiesBR({
 	states: {
 		elementID: "lista_estado",
 		arguments: {
-        	before: "<li>",
-        	after: "</li>",
-        	defaultOption: "Selecione um Estado"
-        }
+			before: "<li>",
+			after: "</li>",
+			defaultOption: "Selecione um Estado"
+		}
 	}
 });
 ```
