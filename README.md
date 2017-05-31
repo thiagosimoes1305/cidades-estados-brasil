@@ -17,6 +17,23 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
+> **Cidades:**
+
+> - Retorno de todas as Cidades de um Estado;
+> - Escolha do texto option padrão, exemplo: "Selecione uma Cidade";
+> - Alterar o padrão de retorno através de argumentos;
+> - OBS: Não tem a opção de "Marcar uma Cidade" devido aos problemas de acentos e espaços (serão corrigidos na próxima versão);
+
+----------
+
+> **Retornando a cidade Cidades de acordo com o Estado selecionado:**
+
+> - XXXXXXXX XXXXXXXX XXXXXXXX;
+
+----------
+
+----------
+
 #### **Retornando os Estados:**
 
 *Através do **elementID** você coloca o ID do SELECT*.
@@ -113,3 +130,54 @@ new statesCitiesBR({
 });
 ```
 Resultado final: [https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted_k/2aL90f8e/)
+
+
+----------
+
+----------
+
+
+#### **Retorno de todas as Cidades de um Estado:**
+
+*É necessário o uso do **state** para retorno das Cidades*.
+```javascript
+new statesCitiesBR({
+	cities: {
+		elementID: "selects_cidades",
+		state: "BA"
+	}
+});
+```
+Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/](https://jsfiddle.net/ted_k/5v0kfsr0/)
+
+----------
+
+#### **Alterar o padrão de retorno através de argumentos:**
+
+*Através dos **arguments**, você pode inserir outro elemento, no caso foi usado uma LISTA.*
+```javascript
+new statesCitiesBR({
+	cities: {
+		elementID: "lista_cidades",
+		state: "BA",
+		arguments: {
+			before: "<li>",
+			after: "</li>",
+			defaultOption: "Selecione uma Cidade"
+		}
+	}
+});
+```
+*O **defaultOption**, também pode ser usado dentro do arguments.*
+
+Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/](https://jsfiddle.net/ted_k/5v0kfsr0/)
+
+
+
+
+
+
+
+
+
+

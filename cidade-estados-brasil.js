@@ -232,7 +232,7 @@ function returnError(){
 
 			if (cities_element.defaultOption != undefined){
 				if (cities_element.before != undefined && cities_element.after != undefined){
-					states_print += cities_element.before.slice(0, -1) + " data-value=''>" + cities_element.defaultOption + cities_element.after;
+					cities_print += cities_element.before.slice(0, -1) + " data-value=''>" + cities_element.defaultOption + cities_element.after;
 				}
 				else {
 					returnError();
