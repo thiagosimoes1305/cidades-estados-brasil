@@ -2,7 +2,7 @@
  * Cidades e Estados Brasileiros
  * Example and Documentation: https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md
  *
- * Version: 2.0
+ * Version: 2.1
  *
  * Copyright (c) 2016 Ted k'
  * http://tedk.com.br/
