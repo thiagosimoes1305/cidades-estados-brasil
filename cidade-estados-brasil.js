@@ -197,7 +197,7 @@ function returnError(){
 				var initial = (defaults.states.initial) ? value[0] : value[1];
 				if (states_element){
 					if (states_element.before != undefined && states_element.after != undefined){
-						states_print += states_element.before.slice(0, -1) + " data-value='" + initial + "'>" + initial + states_element.after;
+						states_print += states_element.before.slice(0, -1) + " data-value='" + initial + "' data-uf='" + value[0] + "'>" + initial + states_element.after;
 					}
 					else {
 						returnError();

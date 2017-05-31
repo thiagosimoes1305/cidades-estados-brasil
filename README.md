@@ -28,7 +28,7 @@ Abaixo segue as principais funcionalidades do script.
 
 > **Retornando a cidade Cidades de acordo com o Estado selecionado:**
 
-> - XXXXXXXX XXXXXXXX XXXXXXXX;
+> - Usando o Estado para retornar as Cidades;
 
 ----------
 
@@ -170,10 +170,37 @@ new statesCitiesBR({
 ```
 *O **defaultOption**, também pode ser usado dentro do arguments.*
 
-Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/](https://jsfiddle.net/ted_k/5v0kfsr0/)
+Resultado final: [https://jsfiddle.net/ted_k/r4532rfp/](https://jsfiddle.net/ted_k/r4532rfp/)
 
 
+----------
 
+----------
+
+
+#### **Usando o Estado para retornar as Cidades:**
+
+*No parâmetro "state", do objeto **cities** é só colocar a string "auto", que irá sincronizar direto com o estado selecionado acima. É necessário o uso do **state** em conjunto com a **cities** *.
+```javascript
+new statesCitiesBR({
+	states: {
+		elementID: "lista_estados",
+		defaultOption: "Selecione um Estado"
+	},
+	cities: {
+		elementID: "lista_cidades",
+		state: "auto",
+		defaultOption: "Selecione uma Cidade"
+	}
+});
+```
+Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/](https://jsfiddle.net/ted_k/5vqnmLad/)
+
+----------
+
+* **OBS:** Para usar em uma lista é necessário usar os objetos separados e só funcionará com o "states" usando pouco de javascript para restagar o valor de um atributo, o "data-uf". *
+
+Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/](https://jsfiddle.net/ted_k/5vqnmLad/)
 
 
 
