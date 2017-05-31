@@ -9,9 +9,9 @@ Abaixo segue as principais funcionalidades do script.
 
 > **Estados:**
 
-> - Retorno de todos os Estados;
+> - [Retorno de todos os Estados](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md "Retorno de todos os Estados");
 > - Marcar o Estado na lista;
-> - Escolha do texto option padrão "Selecione um Estado";
+> - Escolha do texto option padrão, exemplo: "Selecione um Estado";
 > - Alternar os nomes dos Estados por sigla ou por extenso.
 > - Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos;
 
@@ -28,12 +28,12 @@ new statesCitiesBR({
 });
 ```
 
-Resultado final:
-[https://jsfiddle.net/ted_k/41axqrc4/](https://jsfiddle.net/ted_k/41axqrc4/)
+Resultado final: [https://jsfiddle.net/ted_k/41axqrc4/](https://jsfiddle.net/ted_k/41axqrc4/)
 
 ----------
 
 **Marcando um Estado na lista:**
+
 *Através do **current** você adiciona a SIGLA do Estado*.
 ```javascript
 new statesCitiesBR({
@@ -44,12 +44,12 @@ new statesCitiesBR({
 });
 ```
 
-Resultado final:
-[https://jsfiddle.net/ted_k/b5vdy8fq/](https://jsfiddle.net/ted_k/b5vdy8fq/)
+Resultado final: [https://jsfiddle.net/ted_k/b5vdy8fq/](https://jsfiddle.net/ted_k/b5vdy8fq/)
 
 ----------
 
 **Escolha do texto option padrão "Selecione um Estado":**
+
 *Através do **defaultOption**, adicione um Texto padrão*.
 ```javascript
 new statesCitiesBR({
@@ -60,12 +60,12 @@ new statesCitiesBR({
 });
 ```
 
-Resultado final:
-[https://jsfiddle.net/ted_k/bu0L3yhv/1/](https://jsfiddle.net/ted_k/bu0L3yhv/1/)
+Resultado final: [https://jsfiddle.net/ted_k/bu0L3yhv/1/](https://jsfiddle.net/ted_k/bu0L3yhv/1/)
 
 ----------
 
 **Alternar os nomes dos Estados por sigla ou por extenso:**
+
 *Através do **initial** com valor "true", você alterna por Sigla ou Extenso*.
 ```javascript
 new statesCitiesBR({
@@ -76,12 +76,12 @@ new statesCitiesBR({
 });
 ```
 
-Resultado final:
-[https://jsfiddle.net/ted_k/uh98tbjf/](https://jsfiddle.net/ted_k/uh98tbjf/)
+Resultado final: [https://jsfiddle.net/ted_k/uh98tbjf/](https://jsfiddle.net/ted_k/uh98tbjf/)
 
 ----------
 
 **Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos:**
+
 *Através dos **arguments**, você pode inserir outro elemento, no caso foi usado uma LISTA.*
 ```javascript
 new statesCitiesBR({
@@ -95,10 +95,10 @@ new statesCitiesBR({
 });
 ```
 *Lembre-se também de alterar o elemento HTML que receberá o retorno.*
-Resultado final:
-[https://jsfiddle.net/ted_k/1yqc6wzh/](https://jsfiddle.net/ted_k/1yqc6wzh/)
+Resultado final: [https://jsfiddle.net/ted_k/1yqc6wzh/](https://jsfiddle.net/ted_k/1yqc6wzh/)
 
 **Outros argumentos:**
+
 *O **defaultOption**, também pode ser usado dentro do arguments.*
 ```javascript
 new statesCitiesBR({
@@ -112,5 +112,4 @@ new statesCitiesBR({
 	}
 });
 ```
-Resultado final:
-[https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted_k/2aL90f8e/)
+Resultado final: [https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted_k/2aL90f8e/)
