@@ -198,13 +198,6 @@ Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/](https://jsfiddle.net/ted
 
 ----------
 
-* **OBS:** Para usar em uma lista é necessário usar os objetos separados e só funcionará com o "states" usando pouco de javascript para restagar o valor de um atributo, o "data-uf". *
+* **OBS:** Para usar em uma LISTA é necessário usar os objetos separados e só funcionará com o "states" usando pouco de javascript para restagar o valor de um atributo, o "data-uf". *
 
-Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/](https://jsfiddle.net/ted_k/5vqnmLad/)
-
-
-
-
-
-
-
+Resultado final: [https://jsfiddle.net/ted_k/d492hcje/](https://jsfiddle.net/ted_k/d492hcje/)
