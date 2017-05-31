@@ -1,168 +1,115 @@
 # Cidades e Estados do Brasil
 
-Código criado em JavaScript para retornar as Cidades e Estados brasileiros.
-
-Códigos disponíveis para JavaScript (vanilla) e jQuery.
-
+Código criado em JavaScript (sem uso de library) para retornar as Cidades e Estados brasileiros.
 Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-## Funcionalidade para Estados: 
+### Funcionalidades: 
 
-> **Dados:**
+> **Estados:**
 
-> - Retorno dos Estados através do Nome ou da Sigla;
-> - Marcar o Estado no campo de SELECT do HTML;
-
-
-OBS: O retorno é impresso em um SELECT.
-
-
-Por padrão, usando o método .states(), exemplo:
-
-```javascript
-document.getElementById("select").states();
-```
-
-Resultado final:
-```html
-<option value="BA">Bahia</option>
-```
+> - Retorno de todos os Estados;
+> - Marcar o Estado na lista;
+> - Escolha do texto option padrão "Selecione um Estado";
+> - Alternar os nomes dos Estados por sigla ou por extenso.
+> - Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos;
 
 ----------
 
-Usando a opção **true** no *text*, o nome do Estado será retornado em **sigla**, exemplo:
-
+**Retornando os Estados:**
+*Através do **elementID** você coloca o ID do SELECT*.
 ```javascript
-document.getElementById("select").states({
-	text: true
+new statesCitiesBR({
+	states: {
+		elementID: "selects_estado"
+	}
 });
 ```
 
 Resultado final:
-```html
-<option value="BA">Bahia</option>
-```
+[https://jsfiddle.net/ted_k/41axqrc4/](https://jsfiddle.net/ted_k/41axqrc4/)
 
 ----------
 
-Usando a opção **true** no *value*, o nome do Estado será retornado em **extenso**, exemplo:
-
+**Marcando um Estado na lista:**
+*Através do **current** você adiciona a SIGLA do Estado*.
 ```javascript
-document.getElementById("select").states({
-	value: true
+new statesCitiesBR({
+	states: {
+		elementID: "selects_estado",
+		current: "BA"
+	}
 });
 ```
 
 Resultado final:
-```html
-<option value="Bahia">Bahia</option>
-```
+[https://jsfiddle.net/ted_k/b5vdy8fq/](https://jsfiddle.net/ted_k/b5vdy8fq/)
 
 ----------
 
-A combinação do *value* e do *text* podem variar o retorno no SELECT, exemplo:
-
+**Escolha do texto option padrão "Selecione um Estado":**
+*Através do **defaultOption**, adicione um Texto padrão*.
 ```javascript
-document.getElementById("select").states({
-	value: true,
-	text: true
+new statesCitiesBR({
+	states: {
+		elementID: "selects_estado",
+		defaultOption: "Selecione um Estado"
+	}
 });
 ```
 
 Resultado final:
-```html
-<option value="Bahia">BA</option>
-```
+[https://jsfiddle.net/ted_k/bu0L3yhv/1/](https://jsfiddle.net/ted_k/bu0L3yhv/1/)
 
 ----------
 
-Existe a possibilidade de marcar o Estado como padrão usando o *current*, exemplo:
-
+**Alternar os nomes dos Estados por sigla ou por extenso:**
+*Através do **initial** com valor "true", você alterna por Sigla ou Extenso*.
 ```javascript
-document.getElementById("select").states({
-	current: "BA"
+new statesCitiesBR({
+	states: {
+		elementID: "selects_estado",
+		initial: true
+	}
 });
 ```
 
 Resultado final:
-```html
-<option selected="selected" value="Bahia">BA</option>
-```
-A variação dessa opção pode ser usada como no exemplo abaixo:
+[https://jsfiddle.net/ted_k/uh98tbjf/](https://jsfiddle.net/ted_k/uh98tbjf/)
+
+----------
+
+**Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos:**
+*Através dos **arguments**, você pode inserir outro elemento, no caso foi usado uma LISTA.*
 ```javascript
-document.getElementById("select").states({
-	current: "Bahia" // BA, ba, Bahia, BAHIA, bahia
+new statesCitiesBR({
+	states: {
+		elementID: "lista_estado",
+		arguments: {
+        	before: "<li>",
+        	after: "</li>",
+        }
+	}
 });
 ```
-
-----------
-
-Outra opcão de retorno pode ser usando **states.Array()** fora do objeto SELECT do HTML. Segue exemplo no console:
-
-```javascript
-var retorno = states.Array();
-console.log(retorno);
-```
-
-----------
-
-## Funcionalidade para Cidades: 
-
-> **Dados:**
-
-> - Retorno das Cidades através da Sigla;
-> - Marcar a Cidade no campo de SELECT do HTML;
-
-
-Por padrão, usando o método .city(), exemplo:
-
-```javascript
-document.getElementById("select").city();
-```
-
-Resultado final é um lista de cidades:
-```html
-<option value="Salvador">Salvador</option>
-```
-
-----------
-
-Usando as siglas dos Estados *states*, você pode retornar as cidades, exemplo:
-
-```javascript
-document.getElementById("select").states({
-	states: "BA"
-});
-```
-
+*Lembre-se também de alterar o elemento HTML que receberá o retorno.*
 Resultado final:
-```html
-<option value="Salvador">Salvador</option>
-```
+[https://jsfiddle.net/ted_k/1yqc6wzh/](https://jsfiddle.net/ted_k/1yqc6wzh/)
 
-----------
-
-Para marcar uma cidade, ou usar ela como padrão use o nome da cidade (com acento se tiver) no *current*:
-
+**Outros argumentos:**
+*O **defaultOption**, também pode ser usado dentro do arguments.*
 ```javascript
-document.getElementById("select").states({
-	states: "BA",
-    current: "Eunápolis"
+new statesCitiesBR({
+	states: {
+		elementID: "lista_estado",
+		arguments: {
+        	before: "<li>",
+        	after: "</li>",
+        	defaultOption: "Selecione um Estado"
+        }
+	}
 });
 ```
-
 Resultado final:
-```html
-<option selected="selected" value="Eunápolis">Eunápolis</option>
-```
-
-----------
-
-Outra opcão de retorno pode ser usando **city.Array()** (só retorna as cidades do Estado) fora do objeto SELECT do HTML. Segue exemplo no console:
-
-```javascript
-var retorno = city.Array({states: "BA"}); // BA ou ba
-console.log(retorno);
-```
+[https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted_k/2aL90f8e/)
