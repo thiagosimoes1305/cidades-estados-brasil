@@ -19,16 +19,15 @@ Abaixo segue as principais funcionalidades do script.
 
 > **Cidades:**
 
-> - Retorno de todas as Cidades de um Estado;
-> - Escolha do texto option padrão, exemplo: "Selecione uma Cidade";
-> - Alterar o padrão de retorno através de argumentos;
+> - [Retorno de todas as Cidades de um Estado / Escolha do texto option padrão, exemplo: "Selecione uma Cidade"]();
+> - [Alterar o padrão de retorno através de argumentos](https://github.com/tedktedk/cidades-estados-brasil#alterar-o-padrão-de-retorno-através-de-argumentos);
 > - OBS: Não tem a opção de "Marcar uma Cidade" devido aos problemas de acentos e espaços (serão corrigidos na próxima versão);
 
 ----------
 
 > **Retornando a cidade Cidades de acordo com o Estado selecionado:**
 
-> - Usando o Estado para retornar as Cidades;
+> - [Usando o Estado para retornar as Cidades](https://github.com/tedktedk/cidades-estados-brasil#usando-o-estado-para-retornar-as-cidades);
 
 ----------
 
@@ -137,18 +136,19 @@ Resultado final: [https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted
 ----------
 
 
-#### **Retorno de todas as Cidades de um Estado:**
+#### **Retorno de todas as Cidades de um Estado / Escolha do texto option padrão, exemplo: "Selecione uma Cidade":**
 
 *É necessário o uso do **state** para retorno das Cidades*.
 ```javascript
 new statesCitiesBR({
 	cities: {
 		elementID: "selects_cidades",
-		state: "BA"
+		state: "BA",
+		defaultOption: "Selecione uma Cidade"
 	}
 });
 ```
-Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/](https://jsfiddle.net/ted_k/5v0kfsr0/)
+Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/1/](https://jsfiddle.net/ted_k/5v0kfsr0/1/)
 
 ----------
 
