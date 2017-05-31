@@ -19,7 +19,7 @@ Abaixo segue as principais funcionalidades do script.
 
 > **Cidades:**
 
-> - [Retorno de todas as Cidades de um Estado / Escolha do texto option padrão, exemplo: "Selecione uma Cidade"]();
+> - [Retorno de todas as Cidades de um Estado / Escolha do texto option padrão, exemplo: "Selecione uma Cidade"](https://github.com/tedktedk/cidades-estados-brasil#retorno-de-todas-as-cidades-de-um-estado--escolha-do-texto-option-padrão-exemplo-selecione-uma-cidade);
 > - [Alterar o padrão de retorno através de argumentos](https://github.com/tedktedk/cidades-estados-brasil#alterar-o-padrão-de-retorno-através-de-argumentos);
 > - OBS: Não tem a opção de "Marcar uma Cidade" devido aos problemas de acentos e espaços (serão corrigidos na próxima versão);
 
