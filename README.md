@@ -10,10 +10,10 @@ Abaixo segue as principais funcionalidades do script.
 > **Estados:**
 
 > - [Retorno de todos os Estados](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#retornando-os-estados);
-> - Marcar o Estado na lista;
-> - Escolha do texto option padrão, exemplo: "Selecione um Estado";
-> - Alternar os nomes dos Estados por sigla ou por extenso.
-> - Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos;
+> - [Marcar o Estado na lista](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#marcando-um-estado-na-lista);
+> - [Escolha do texto option padrão, exemplo: "Selecione um Estado"](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#escolha-do-texto-option-padrão-selecione-um-estado);
+> - [Alternar os nomes dos Estados por sigla ou por extenso](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#alternar-os-nomes-dos-estados-por-sigla-ou-por-extenso).
+> - [Por padrão o retorno é em um SELECT mas pode ser alterado através dos argumentos](https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md#por-padrão-o-retorno-é-em-um-select-mas-pode-ser-alterado-através-dos-argumentos);
 
 ----------
 
