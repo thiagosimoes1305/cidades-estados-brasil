@@ -230,6 +230,15 @@ function returnError(){
 				cities_print = '<option value="">' + defaults.cities.defaultOption + '</option>';
 			}
 
+			if (cities_element.defaultOption != undefined){
+				if (cities_element.before != undefined && cities_element.after != undefined){
+					states_print += cities_element.before.slice(0, -1) + " data-value=''>" + cities_element.defaultOption + cities_element.after;
+				}
+				else {
+					returnError();
+				}
+			}
+
 			array_cities.forEach(function(value){
 				if (value[0] == cities_state){
 					value[1].forEach(function(arr){
