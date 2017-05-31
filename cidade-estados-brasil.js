@@ -2,42 +2,42 @@
  * Cidades e Estados Brasileiros
  * Example and Documentation: https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md
  *
- * Version: 1.0
- * Require: jQuery 1.8+
+ * Version: 2.0
+ *
  * Copyright (c) 2016 Ted k'
  * http://tedk.com.br/
+ *
  *
  * Dual licensed under the MIT or GPL Version 2 licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
  */
 
- if (!Array.prototype.findIndex){
-  Array.prototype.findIndex = function(predicate){
-    if (this === null) {
-      throw new TypeError('Array.prototype.findIndex called on null or undefined');
-    }
-    if (typeof predicate !== 'function') {
-      throw new TypeError('predicate must be a function');
-    }
-    var list = Object(this);
-    var length = list.length >>> 0;
-    var thisArg = arguments[1];
-    var value;
+if (!Array.prototype.findIndex){
+	Array.prototype.findIndex = function(predicate){
+		if (this === null) {
+			throw new TypeError('Array.prototype.findIndex called on null or undefined');
+		}
+		if (typeof predicate !== 'function') {
+			throw new TypeError('predicate must be a function');
+		}
 
-    for (var i = 0; i < length; i++) {
-      value = list[i];
-      if (predicate.call(thisArg, value, i, list)) {
-        return i;
-      }
-    }
-    return -1;
-  };
+		var list = Object(this);
+		var length = list.length >>> 0;
+		var thisArg = arguments[1];
+		var value;
+
+		for (var i = 0; i < length; i++) {
+			value = list[i];
+			if (predicate.call(thisArg, value, i, list)) {
+				return i;
+			}
+		}
+		return -1;
+	};
 }
 
-var STATES_default = "BA";
-var CITY_default = "Salvador";
-var STATES_array = [
+ var array_estados = [
 	["AC", "Acre"],
 	["AL", "Alagoas"],
 	["AP", "Amapá"],
@@ -67,7 +67,7 @@ var STATES_array = [
 	["TO", "Tocantins"]
 ];
 
-var STATES_array_city = [
+var array_cities = [
 	["AC", [["Acrelândia"],	["Assis Brasil"], ["Brasiléia"], ["Bujari"], ["Capixaba"], ["Cruzeiro do Sul"], ["Epitaciolândia"], ["Feijó"], ["Jordão"], ["Mâncio Lima"], ["Manoel Urbano"], ["Marechal Thaumaturgo"], ["Plácido de Castro"], ["Porto Acre"], ["Porto Walter"], ["Rio Branco"], ["Rodrigues Alves"], ["Santa Rosa do Purus"], ["Sena Madureira"], ["Senador Guiomard"], ["Tarauacá"], ["Xapuri"]
 	]],
 	["AL", [["Água Branca"], ["Anadia"], ["Arapiraca"], ["Atalaia"], ["Barra de Santo Antônio"], ["Barra de São Miguel"], ["Batalha"], ["Belém"], ["Belo Monte"], ["Boca da Mata"], ["Branquinha"], ["Cacimbinhas"], ["Cajueiro"], ["Campestre"], ["Campo Alegre"], ["Campo Grande"], ["Canapi"], ["Capela"], ["Carneiros"], ["Chã Preta"], ["Coité do Nóia"], ["Colônia Leopoldina"], ["Coqueiro Seco"], ["Coruripe"], ["Craíbas"], ["Delmiro Gouveia"], ["Dois Riachos"], ["Estrela de Alagoas"], ["Feira Grande"], ["Feliz Deserto"], ["Flexeiras"], ["Girau do Ponciano"], ["Ibateguara"], ["Igaci"], ["Igreja Nova"], ["Inhapi"], ["Jacaré dos Homens"], ["Jacuípe"], ["Japaratinga"], ["Jaramataia"], ["Jequiá da Praia"], ["Joaquim Gomes"], ["Jundiá"], ["Junqueiro"], ["Lagoa da Canoa"], ["Limoeiro de Anadia"], ["Maceió"], ["Major Isidoro"], ["Mar Vermelho"], ["Maragogi"], ["Maravilha"], ["Marechal Deodoro"], ["Maribondo"], ["Mata Grande"], ["Matriz de Camaragibe"], ["Messias"], ["Minador do Negrão"], ["Monteirópolis"], ["Murici"], ["Novo Lino"], ["Olho d'Água das Flores"], ["Olho d'Água do Casado"], ["Olho d'Água Grande"], ["Olivença"], ["Ouro Branco"], ["Palestina"], ["Palmeira dos Índios"], ["Pão de Açúcar"], ["Pariconha"], ["Paripueira"], ["Passo de Camaragibe"], ["Paulo Jacinto"], ["Penedo"], ["Piaçabuçu"], ["Pilar"], ["Pindoba"], ["Piranhas"], ["Poço das Trincheiras"], ["Porto Calvo"], ["Porto de Pedras"], ["Porto Real do Colégio"], ["Quebrangulo"], ["Rio Largo"], ["Roteiro"], ["Santa Luzia do Norte"], ["Santana do Ipanema"], ["Santana do Mundaú"], ["São Brás"], ["São José da Laje"], ["São José da Tapera"], ["São Luís do Quitunde"], ["São Miguel dos Campos"], ["São Miguel dos Milagres"], ["São Sebastião"], ["Satuba"], ["Senador Rui Palmeira"], ["Tanque d'Arca"], ["Taquarana"], ["Teotônio Vilela"], ["Traipu"], ["União dos Palmares"], ["Viçosa"]
@@ -101,7 +101,7 @@ var STATES_array_city = [
 	]],
 	["PI", [["Acauã"], ["Agricolândia"], ["Água Branca"], ["Alagoinha do Piauí"], ["Alegrete do Piauí"], ["Alto Longá"], ["Altos"], ["Alvorada do Gurguéia"], ["Amarante"], ["Angical do Piauí"], ["Anísio de Abreu"], ["Antônio Almeida"], ["Aroazes"], ["Arraial"], ["Assunção do Piauí"], ["Avelino Lopes"], ["Baixa Grande do Ribeiro"], ["Barra d'Alcântara"], ["Barras"], ["Barreiras do Piauí"], ["Barro Duro"], ["Batalha"], ["Bela Vista do Piauí"], ["Belém do Piauí"], ["Beneditinos"], ["Bertolínia"], ["Betânia do Piauí"], ["Boa Hora"], ["Bocaina"], ["Bom Jesus"], ["Bom Princípio do Piauí"], ["Bonfim do Piauí"], ["Boqueirão do Piauí"], ["Brasileira"], ["Brejo do Piauí"], ["Buriti dos Lopes"], ["Buriti dos Montes"], ["Cabeceiras do Piauí"], ["Cajazeiras do Piauí"], ["Cajueiro da Praia"], ["Caldeirão Grande do Piauí"], ["Campinas do Piauí"], ["Campo Alegre do Fidalgo"], ["Campo Grande do Piauí"], ["Campo Largo do Piauí"], ["Campo Maior"], ["Canavieira"], ["Canto do Buriti"], ["Capitão de Campos"], ["Capitão Gervásio Oliveira"], ["Caracol"], ["Caraúbas do Piauí"], ["Caridade do Piauí"], ["Castelo do Piauí"], ["Caxingó"], ["Cocal"], ["Cocal de Telha"], ["Cocal dos Alves"], ["Coivaras"], ["Colônia do Gurguéia"], ["Colônia do Piauí"], ["Conceição do Canindé"], ["Coronel José Dias"], ["Corrente"], ["Cristalândia do Piauí"], ["Cristino Castro"], ["Curimatá"], ["Currais"], ["Curral Novo do Piauí"], ["Curralinhos"], ["Demerval Lobão"], ["Dirceu Arcoverde"], ["Dom Expedito Lopes"], ["Dom Inocêncio"], ["Domingos Mourão"], ["Elesbão Veloso"], ["Eliseu Martins"], ["Esperantina"], ["Fartura do Piauí"], ["Flores do Piauí"], ["Floresta do Piauí"], ["Floriano"], ["Francinópolis"], ["Francisco Ayres"], ["Francisco Macedo"], ["Francisco Santos"], ["Fronteiras"], ["Geminiano"], ["Gilbués"], ["Guadalupe"], ["Guaribas"], ["Hugo Napoleão"], ["Ilha Grande"], ["Inhuma"], ["Ipiranga do Piauí"], ["Isaías Coelho"], ["Itainópolis"], ["Itaueira"], ["Jacobina do Piauí"], ["Jaicós"], ["Jardim do Mulato"], ["Jatobá do Piauí"], ["Jerumenha"], ["João Costa"], ["Joaquim Pires"], ["Joca Marques"], ["José de Freitas"], ["Juazeiro do Piauí"], ["Júlio Borges"], ["Jurema"], ["Lagoa Alegre"], ["Lagoa de São Francisco"], ["Lagoa do Barro do Piauí"], ["Lagoa do Piauí"], ["Lagoa do Sítio"], ["Lagoinha do Piauí"], ["Landri Sales"], ["Luís Correia"], ["Luzilândia"], ["Madeiro"], ["Manoel Emídio"], ["Marcolândia"], ["Marcos Parente"], ["Massapê do Piauí"], ["Matias Olímpio"], ["Miguel Alves"], ["Miguel Leão"], ["Milton Brandão"], ["Monsenhor Gil"], ["Monsenhor Hipólito"], ["Monte Alegre do Piauí"], ["Morro Cabeça no Tempo"], ["Morro do Chapéu do Piauí"], ["Murici dos Portelas"], ["Nazaré do Piauí"], ["Nossa Senhora de Nazaré"], ["Nossa Senhora dos Remédios"], ["Nova Santa Rita"], ["Novo Oriente do Piauí"], ["Novo Santo Antônio"], ["Oeiras"], ["Olho d'Água do Piauí"], ["Padre Marcos"], ["Paes Landim"], ["Pajeú do Piauí"], ["Palmeira do Piauí"], ["Palmeirais"], ["Paquetá"], ["Parnaguá"], ["Parnaíba"], ["Passagem Franca do Piauí"], ["Patos do Piauí"], ["Pau d'Arco do Piauí"], ["Paulistana"], ["Pavussu"], ["Pedro II"], ["Pedro Laurentino"], ["Picos"], ["Pimenteiras"], ["Pio IX"], ["Piracuruca"], ["Piripiri"], ["Porto"], ["Porto Alegre do Piauí"], ["Prata do Piauí"], ["Queimada Nova"], ["Redenção do Gurguéia"], ["Regeneração"], ["Riacho Frio"], ["Ribeira do Piauí"], ["Ribeiro Gonçalves"], ["Rio Grande do Piauí"], ["Santa Cruz do Piauí"], ["Santa Cruz dos Milagres"], ["Santa Filomena"], ["Santa Luz"], ["Santa Rosa do Piauí"], ["Santana do Piauí"], ["Santo Antônio de Lisboa"], ["Santo Antônio dos Milagres"], ["Santo Inácio do Piauí"], ["São Braz do Piauí"], ["São Félix do Piauí"], ["São Francisco de Assis do Piauí"], ["São Francisco do Piauí"], ["São Gonçalo do Gurguéia"], ["São Gonçalo do Piauí"], ["São João da Canabrava"], ["São João da Fronteira"], ["São João da Serra"], ["São João da Varjota"], ["São João do Arraial"], ["São João do Piauí"], ["São José do Divino"], ["São José do Peixe"], ["São José do Piauí"], ["São Julião"], ["São Lourenço do Piauí"], ["São Luis do Piauí"], ["São Miguel da Baixa Grande"], ["São Miguel do Fidalgo"], ["São Miguel do Tapuio"], ["São Pedro do Piauí"], ["São Raimundo Nonato"], ["Sebastião Barros"], ["Sebastião Leal"], ["Sigefredo Pacheco"], ["Simões"], ["Simplício Mendes"], ["Socorro do Piauí"], ["Sussuapara"], ["Tamboril do Piauí"], ["Tanque do Piauí"], ["Teresina"], ["União"], ["Uruçuí"], ["Valença do Piauí"], ["Várzea Branca"], ["Várzea Grande"], ["Vera Mendes"], ["Vila Nova do Piauí"], ["Wall Ferraz"]
 	]],
-	["PR", [["Abatiá"], ["Adrianópolis"], ["Agudos do Sul"], ["Almirante Tamandaré"], ["Altamira do Paraná"], ["Alto Paraná"], ["Alto Piquiri"], ["Altônia"], ["Alvorada do Sul"], ["Amaporã"], ["Ampére"], ["Anahy"], ["Andirá"], ["Ângulo"], ["Antonina"], ["Antônio Olinto"], ["Apucarana"], ["Arapongas"], ["Arapoti"], ["Arapuã"], ["Araruna"], ["Araucária"], ["Ariranha do Ivaí"], ["Assaí"], ["Assis Chateaubriand"], ["Astorga"], ["Atalaia"], ["Balsa Nova"], ["Bandeirantes"], ["Barbosa Ferraz"], ["Barra do Jacaré"], ["Barracão"], ["Bela Vista da Caroba"], ["Bela Vista do Paraíso"], ["Bituruna"], ["Boa Esperança"], ["Boa Esperança do Iguaçu"], ["Boa Ventura de São Roque"], ["Boa Vista da Aparecida"], ["Bocaiúva do Sul"], ["Bom Jesus do Sul"], ["Bom Sucesso"], ["Bom Sucesso do Sul"], ["Borrazópolis"], ["Braganey"], ["Brasilândia do Sul"], ["Cafeara"], ["Cafelândia"], ["Cafezal do Sul"], ["Califórnia"], ["Cambará"], ["Cambé"], ["Cambira"], ["Campina da Lagoa"], ["Campina do Simão"], ["Campina Grande do Sul"], ["Campo Bonito"], ["Campo do Tenente"], ["Campo Largo"], ["Campo Magro"], ["Campo Mourão"], ["Cândido de Abreu"], ["Candói"], ["Cantagalo"], ["Capanema"], ["Capitão Leônidas Marques"], ["Carambeí"], ["Carlópolis"], ["Cascavel"], ["Castro"], ["Catanduvas"], ["Centenário do Sul"], ["Cerro Azul"], ["Céu Azul"], ["Chopinzinho"], ["Cianorte"], ["Cidade Gaúcha"], ["Clevelândia"], ["Colombo"], ["Colorado"], ["Congonhinhas"], ["Conselheiro Mairinck"], ["Contenda"], ["Corbélia"], ["Cornélio Procópio"], ["Coronel Domingos Soares"], ["Coronel Vivida"], ["Corumbataí do Sul"], ["Cruz Machado"], ["Cruzeiro do Iguaçu"], ["Cruzeiro do Oeste"], ["Cruzeiro do Sul"], ["Cruzmaltina"], ["Curitiba"], ["Curiúva"], ["Diamante d'Oeste"], ["Diamante do Norte"], ["Diamante do Sul"], ["Dois Vizinhos"], ["Douradina"], ["Doutor Camargo"], ["Doutor Ulysses"], ["Enéas Marques"], ["Engenheiro Beltrão"], ["Entre Rios do Oeste"], ["Esperança Nova"], ["Espigão Alto do Iguaçu"], ["Farol"], ["Faxinal"], ["Fazenda Rio Grande"], ["Fênix"], ["Fernandes Pinheiro"], ["Figueira"], ["Flor da Serra do Sul"], ["Floraí"], ["Floresta"], ["Florestópolis"], ["Flórida"], ["Formosa do Oeste"], ["Foz do Iguaçu"], ["Foz do Jordão"], ["Francisco Alves"], ["Francisco Beltrão"], ["General Carneiro"], ["Godoy Moreira"], ["Goioerê"], ["Goioxim"], ["Grandes Rios"], ["Guaíra"], ["Guairaçá"], ["Guamiranga"], ["Guapirama"], ["Guaporema"], ["Guaraci"], ["Guaraniaçu"], ["Guarapuava"], ["Guaraqueçaba"], ["Guaratuba"], ["Honório Serpa"], ["Ibaiti"], ["Ibema"], ["Ibiporã"], ["Icaraíma"], ["Iguaraçu"], ["Iguatu"], ["Imbaú"], ["Imbituva"], ["Inácio Martins"], ["Inajá"], ["Indianópolis"], ["Ipiranga"], ["Iporã"], ["Iracema do Oeste"], ["Irati"], ["Iretama"], ["Itaguajé"], ["Itaipulândia"], ["Itambaracá"], ["Itambé"], ["Itapejara d'Oeste"], ["Itaperuçu"], ["Itaúna do Sul"], ["Ivaí"], ["Ivaiporã"], ["Ivaté"], ["Ivatuba"], ["Jaboti"], ["Jacarezinho"], ["Jaguapitã"], ["Jaguariaíva"], ["Jandaia do Sul"], ["Janiópolis"], ["Japira"], ["Japurá"], ["Jardim Alegre"], ["Jardim Olinda"], ["Jataizinho"], ["Jesuítas"], ["Joaquim Távora"], ["Jundiaí do Sul"], ["Juranda"], ["Jussara"], ["Kaloré"], ["Lapa"], ["Laranjal"], ["Laranjeiras do Sul"], ["Leópolis"], ["Lidianópolis"], ["Lindoeste"], ["Loanda"], ["Lobato"], ["Londrina"], ["Luiziana"], ["Lunardelli"], ["Lupionópolis"], ["Mallet"], ["Mamborê"], ["Mandaguaçu"], ["Mandaguari"], ["Mandirituba"], ["Manfrinópolis"], ["Mangueirinha"], ["Manoel Ribas"], ["Marechal Cândido Rondon"], ["Maria Helena"], ["Marialva"], ["Marilândia do Sul"], ["Marilena"], ["Mariluz"], ["Maringá"], ["Mariópolis"], ["Maripá"], ["Marmeleiro"], ["Marquinho"], ["Marumbi"], ["Matelândia"], ["Matinhos"], ["Mato Rico"], ["Mauá da Serra"], ["Medianeira"], ["Mercedes"], ["Mirador"], ["Miraselva"], ["Missal"], ["Moreira Sales"], ["Morretes"], ["Munhoz de Melo"], ["Nossa Senhora das Graças"], ["Nova Aliança do Ivaí"], ["Nova América da Colina"], ["Nova Aurora"], ["Nova Cantu"], ["Nova Esperança"], ["Nova Esperança do Sudoeste"], ["Nova Fátima"], ["Nova Laranjeiras"], ["Nova Londrina"], ["Nova Olímpia"], ["Nova Prata do Iguaçu"], ["Nova Santa Bárbara"], ["Nova Santa Rosa"], ["Nova Tebas"], ["Novo Itacolomi"], ["Ortigueira"], ["Ourizona"], ["Ouro Verde do Oeste"], ["Paiçandu"], ["Palmas"], ["Palmeira"], ["Palmital"], ["Palotina"], ["Paraíso do Norte"], ["Paranacity"], ["Paranaguá"], ["Paranapoema"], ["Paranavaí"], ["Pato Bragado"], ["Pato Branco"], ["Paula Freitas"], ["Paulo Frontin"], ["Peabiru"], ["Perobal"], ["Pérola"], ["Pérola d'Oeste"], ["Piên"], ["Pinhais"], ["Pinhal de São Bento"], ["Pinhalão"], ["Pinhão"], ["Piraí do Sul"], ["Piraquara"], ["Pitanga"], ["Pitangueiras"], ["Planaltina do Paraná"], ["Planalto"], ["Ponta Grossa"], ["Pontal do Paraná"], ["Porecatu"], ["Porto Amazonas"], ["Porto Barreiro"], ["Porto Rico"], ["Porto Vitória"], ["Prado Ferreira"], ["Pranchita"], ["Presidente Castelo Branco"], ["Primeiro de Maio"], ["Prudentópolis"], ["Quarto Centenário"], ["Quatiguá"], ["Quatro Barras"], ["Quatro Pontes"], ["Quedas do Iguaçu"], ["Querência do Norte"], ["Quinta do Sol"], ["Quitandinha"], ["Ramilândia"], ["Rancho Alegre"], ["Rancho Alegre d'Oeste"], ["Realeza"], ["Rebouças"], ["Renascença"], ["Reserva"], ["Reserva do Iguaçu"], ["Ribeirão Claro"], ["Ribeirão do Pinhal"], ["Rio Azul"], ["Rio Bom"], ["Rio Bonito do Iguaçu"], ["Rio Branco do Ivaí"], ["Rio Branco do Sul"], ["Rio Negro"], ["Rolândia"], ["Roncador"], ["Rondon"], ["Rosário do Ivaí"], ["Sabáudia"], ["Salgado Filho"], ["Salto do Itararé"], ["Salto do Lontra"], ["Santa Amélia"], ["Santa Cecília do Pavão"], ["Santa Cruz Monte Castelo"], ["Santa Fé"], ["Santa Helena"], ["Santa Inês"], ["Santa Isabel do Ivaí"], ["Santa Izabel do Oeste"], ["Santa Lúcia"], ["Santa Maria do Oeste"], ["Santa Mariana"], ["Santa Mônica"], ["Santa Tereza do Oeste"], ["Santa Terezinha de Itaipu"], ["Santana do Itararé"], ["Santo Antônio da Platina"], ["Santo Antônio do Caiuá"], ["Santo Antônio do Paraíso"], ["Santo Antônio do Sudoeste"], ["Santo Inácio"], ["São Carlos do Ivaí"], ["São Jerônimo da Serra"], ["São João"], ["São João do Caiuá"], ["São João do Ivaí"], ["São João do Triunfo"], ["São Jorge d'Oeste"], ["São Jorge do Ivaí"], ["São Jorge do Patrocínio"], ["São José da Boa Vista"], ["São José das Palmeiras"], ["São José dos Pinhais"], ["São Manoel do Paraná"], ["São Mateus do Sul"], ["São Miguel do Iguaçu"], ["São Pedro do Iguaçu"], ["São Pedro do Ivaí"], ["São Pedro do Paraná"], ["São Sebastião da Amoreira"], ["São Tomé"], ["Sapopema"], ["Sarandi"], ["Saudade do Iguaçu"], ["Sengés"], ["Serranópolis do Iguaçu"], ["Sertaneja"], ["Sertanópolis"], ["Siqueira Campos"], ["Sulina"], ["Tamarana"], ["Tamboara"], ["Tapejara"], ["Tapira"], ["Teixeira Soares"], ["Telêmaco Borba"], ["Terra Boa"], ["Terra Rica"], ["Terra Roxa"], ["Tibagi"], ["Tijucas do Sul"], ["Toledo"], ["Tomazina"], ["Três Barras do Paraná"], ["Tunas do Paraná"], ["Tuneiras do Oeste"], ["Tupãssi"], ["Turvo"], ["Ubiratã"], ["Umuarama"], ["União da Vitória"], ["Uniflor"], ["Uraí"], ["Ventania"], ["Vera Cruz do Oeste"], ["Verê"], ["Vila Alta"], ["Virmond"], ["Vitorino"], ["Wenceslau Braz"], ["Xambrê"]
+	["PR", [["Abatiá"], ["Adrianópolis"], ["Agudos do Sul"], ["Almirante Tamandaré"], ["Altamira do Paraná"], ["Alto Paraná"], ["Alto Piquiri"], ["Altônia"], ["Alvorada do Sul"], ["Amaporã"], ["Ampére"], ["Anahy"], ["Andirá"], ["Ângulo"], ["Antonina"], ["Antônio Olinto"], ["Apucarana"], ["Arapongas"], ["Arapoti"], ["Arapuã"], ["Araruna"], ["Araucária"], ["Ariranha do Ivaí"], ["Assaí"], ["Assis Chateaubriand"], ["Astorga"], ["Atalaia"], ["Balsa Nova"], ["Bandeirantes"], ["Barbosa Ferraz"], ["Barra do Jacaré"], ["Barracão"], ["Bela Vista da Caroba"], ["Bela Vista do Paraíso"], ["Bituruna"], ["Boa Esperança"], ["Boa Esperança do Iguaçu"], ["Boa Ventura de São Roque"], ["Boa Vista da Aparecida"], ["Bocaiúva do Sul"], ["Bom Jesus do Sul"], ["Bom Sucesso"], ["Bom Sucesso do Sul"], ["Borrazópolis"], ["Braganey"], ["Brasilândia do Sul"], ["Cafeara"], ["Cafelândia"], ["Cafezal do Sul"], ["Califórnia"], ["Cambará"], ["Cambé"], ["Cambira"], ["Campina da Lagoa"], ["Campina do Simão"], ["Campina Grande do Sul"], ["Campo Bonito"], ["Campo do Tenente"], ["Campo Largo"], ["Campo Magro"], ["Campo Mourão"], ["Cândido de Abreu"], ["Candói"], ["Cantagalo"], ["Capanema"], ["Capitão Leônidas Marques"], ["Carambeí"], ["Carlópolis"], ["Cascavel"], ["Castro"], ["Catanduvas"], ["Centenário do Sul"], ["Cerro Azul"], ["Céu Azul"], ["Chopinzinho"], ["Cianorte"], ["Cidade Gaúcha"], ["Clevelândia"], ["Colombo"], ["Colorado"], ["Congonhinhas"], ["Conselheiro Mairinck"], ["Contenda"], ["Corbélia"], ["Cornélio Procópio"], ["Coronel Domingos Soares"], ["Coronel Vivida"], ["Corumbataí do Sul"], ["Cruz Machado"], ["Cruzeiro do Iguaçu"], ["Cruzeiro do Oeste"], ["Cruzeiro do Sul"], ["Cruzmaltina"], ["Curitiba"], ["Curiúva"], ["Diamante d'Oeste"], ["Diamante do Norte"], ["Diamante do Sul"], ["Dois Vizinhos"], ["Douradina"], ["Doutor Camargo"], ["Doutor Ulysses"], ["Enéas Marques"], ["Engenheiro Beltrão"], ["Entre Rios do Oeste"], ["Esperança Nova"], ["Espigão Alto do Iguaçu"], ["Farol"], ["Faxinal"], ["Fazenda Rio Grande"], ["Fênix"], ["Fernandes Pinheiro"], ["Figueira"], ["Flor da Serra do Sul"], ["Floraí"], ["Floresta"], ["Florestópolis"], ["Flórida"], ["Formosa do Oeste"], ["Foz do Iguaçu"], ["Foz do Jordão"], ["Francisco Alves"], ["Francisco Beltrão"], ["General Carneiro"], ["Godoy Moreira"], ["Goioerê"], ["Goioxim"], ["Grandes Rios"], ["Guaíra"], ["Guairaçá"], ["Guamiranga"], ["Guapirama"], ["Guaporema"], ["Guaraci"], ["Guaraniaçu"], ["Guarapuava"], ["Guaraqueçaba"], ["Guaratuba"], ["Honório Serpa"], ["Ibaiti"], ["Ibema"], ["Ibiporã"], ["Icaraíma"], ["Iguaraçu"], ["Iguatu"], ["Imbaú"], ["Imbituva"], ["Inácio Martins"], ["Inajá"], ["Indianópolis"], ["Ipiranga"], ["Iporã"], ["Iracema do Oeste"], ["Irati"], ["Iretama"], ["Itaguajé"], ["Itaipulândia"], ["Itambaracá"], ["Itambé"], ["Itapejara d'Oeste"], ["Itaperuçu"], ["Itaúna do Sul"], ["Ivaí"], ["Ivaiporã"], ["Ivaté"], ["Ivatuba"], ["Jaboti"], ["Jacarezinho"], ["Jaguapitã"], ["Jaguariaíva"], ["Jandaia do Sul"], ["Janiópolis"], ["Japira"], ["Japurá"], ["Jardim Alegre"], ["Jardim Olinda"], ["Jataizinho"], ["Jesuítas"], ["Joaquim Távora"], ["Jundiaí do Sul"], ["Juranda"], ["Jussara"], ["Kaloré"], ["Lapa"], ["Laranjal"], ["Laranjeiras do Sul"], ["Leópolis"], ["Lidianópolis"], ["Lindoeste"], ["Loanda"], ["Lobato"], ["Londrina"], ["Luiziana"], ["Lunardelli"], ["Lupionópolis"], ["Mallet"], ["Mamborê"], ["Mandaguaçu"], ["Mandaguari"], ["Mandirituba"], ["Manfrinópolis"], ["Mangueirinha"], ["Manoel Ribas"], ["Marechal Cândido Rondon"], ["Maria Helena"], ["Marialva"], ["Marilândia do Sul"], ["Marilena"], ["Mariluz"], ["Maringá"], ["Mariópolis"], ["Maripá"], ["Marmeleiro"], ["Marquinho"], ["Marumbi"], ["Matelândia"], ["Matinhos"], ["Mato Rico"], ["Mauá da Serra"], ["Medianeira"], ["Mercedes"], ["Mirador"], ["Miraselva"], ["Missal"], ["Moreira Sales"], ["Morretes"], ["Munhoz de Melo"], ["Nossa Senhora das Graças"], ["Nova Aliança do Ivaí"], ["Nova América da Colina"], ["Nova Aurora"], ["Nova Cantu"], ["Nova Esperança"], ["Nova Esperança do Sudoeste"], ["Nova Fátima"], ["Nova Laranjeiras"], ["Nova Londrina"], ["Nova Olímpia"], ["Nova Prata do Iguaçu"], ["Nova Santa Bárbara"], ["Nova Santa Rosa"], ["Nova Tebas"], ["Novo Itacolomi"], ["Ortigueira"], ["Ourizona"], ["Ouro Verde do Oeste"], ["Paiçandu"], ["Palmas"], ["Palmeira"], ["Palmital"], ["Palotina"], ["Paraíso do Norte"], ["Paranacities"], ["Paranaguá"], ["Paranapoema"], ["Paranavaí"], ["Pato Bragado"], ["Pato Branco"], ["Paula Freitas"], ["Paulo Frontin"], ["Peabiru"], ["Perobal"], ["Pérola"], ["Pérola d'Oeste"], ["Piên"], ["Pinhais"], ["Pinhal de São Bento"], ["Pinhalão"], ["Pinhão"], ["Piraí do Sul"], ["Piraquara"], ["Pitanga"], ["Pitangueiras"], ["Planaltina do Paraná"], ["Planalto"], ["Ponta Grossa"], ["Pontal do Paraná"], ["Porecatu"], ["Porto Amazonas"], ["Porto Barreiro"], ["Porto Rico"], ["Porto Vitória"], ["Prado Ferreira"], ["Pranchita"], ["Presidente Castelo Branco"], ["Primeiro de Maio"], ["Prudentópolis"], ["Quarto Centenário"], ["Quatiguá"], ["Quatro Barras"], ["Quatro Pontes"], ["Quedas do Iguaçu"], ["Querência do Norte"], ["Quinta do Sol"], ["Quitandinha"], ["Ramilândia"], ["Rancho Alegre"], ["Rancho Alegre d'Oeste"], ["Realeza"], ["Rebouças"], ["Renascença"], ["Reserva"], ["Reserva do Iguaçu"], ["Ribeirão Claro"], ["Ribeirão do Pinhal"], ["Rio Azul"], ["Rio Bom"], ["Rio Bonito do Iguaçu"], ["Rio Branco do Ivaí"], ["Rio Branco do Sul"], ["Rio Negro"], ["Rolândia"], ["Roncador"], ["Rondon"], ["Rosário do Ivaí"], ["Sabáudia"], ["Salgado Filho"], ["Salto do Itararé"], ["Salto do Lontra"], ["Santa Amélia"], ["Santa Cecília do Pavão"], ["Santa Cruz Monte Castelo"], ["Santa Fé"], ["Santa Helena"], ["Santa Inês"], ["Santa Isabel do Ivaí"], ["Santa Izabel do Oeste"], ["Santa Lúcia"], ["Santa Maria do Oeste"], ["Santa Mariana"], ["Santa Mônica"], ["Santa Tereza do Oeste"], ["Santa Terezinha de Itaipu"], ["Santana do Itararé"], ["Santo Antônio da Platina"], ["Santo Antônio do Caiuá"], ["Santo Antônio do Paraíso"], ["Santo Antônio do Sudoeste"], ["Santo Inácio"], ["São Carlos do Ivaí"], ["São Jerônimo da Serra"], ["São João"], ["São João do Caiuá"], ["São João do Ivaí"], ["São João do Triunfo"], ["São Jorge d'Oeste"], ["São Jorge do Ivaí"], ["São Jorge do Patrocínio"], ["São José da Boa Vista"], ["São José das Palmeiras"], ["São José dos Pinhais"], ["São Manoel do Paraná"], ["São Mateus do Sul"], ["São Miguel do Iguaçu"], ["São Pedro do Iguaçu"], ["São Pedro do Ivaí"], ["São Pedro do Paraná"], ["São Sebastião da Amoreira"], ["São Tomé"], ["Sapopema"], ["Sarandi"], ["Saudade do Iguaçu"], ["Sengés"], ["Serranópolis do Iguaçu"], ["Sertaneja"], ["Sertanópolis"], ["Siqueira Campos"], ["Sulina"], ["Tamarana"], ["Tamboara"], ["Tapejara"], ["Tapira"], ["Teixeira Soares"], ["Telêmaco Borba"], ["Terra Boa"], ["Terra Rica"], ["Terra Roxa"], ["Tibagi"], ["Tijucas do Sul"], ["Toledo"], ["Tomazina"], ["Três Barras do Paraná"], ["Tunas do Paraná"], ["Tuneiras do Oeste"], ["Tupãssi"], ["Turvo"], ["Ubiratã"], ["Umuarama"], ["União da Vitória"], ["Uniflor"], ["Uraí"], ["Ventania"], ["Vera Cruz do Oeste"], ["Verê"], ["Vila Alta"], ["Virmond"], ["Vitorino"], ["Wenceslau Braz"], ["Xambrê"]
 	]],
 	["RJ", [["Angra dos Reis"], ["Aperibé"], ["Araruama"], ["Areal"], ["Armação de Búzios"], ["Arraial do Cabo"], ["Barra do Piraí"], ["Barra Mansa"], ["Belford Roxo"], ["Bom Jardim"], ["Bom Jesus do Itabapoana"], ["Cabo Frio"], ["Cachoeiras de Macacu"], ["Cambuci"], ["Campos dos Goytacazes"], ["Cantagalo"], ["Carapebus"], ["Cardoso Moreira"], ["Carmo"], ["Casimiro de Abreu"], ["Comendador Levy Gasparian"], ["Conceição de Macabu"], ["Cordeiro"], ["Duas Barras"], ["Duque de Caxias"], ["Engenheiro Paulo de Frontin"], ["Guapimirim"], ["Iguaba Grande"], ["Itaboraí"], ["Itaguaí"], ["Italva"], ["Itaocara"], ["Itaperuna"], ["Itatiaia"], ["Japeri"], ["Laje do Muriaé"], ["Macaé"], ["Macuco"], ["Magé"], ["Mangaratiba"], ["Maricá"], ["Mendes"], ["Mesquita"], ["Miguel Pereira"], ["Miracema"], ["Natividade"], ["Nilópolis"], ["Niterói"], ["Nova Friburgo"], ["Nova Iguaçu"], ["Paracambi"], ["Paraíba do Sul"], ["Parati"], ["Paty do Alferes"], ["Petrópolis"], ["Pinheiral"], ["Piraí"], ["Porciúncula"], ["Porto Real"], ["Quatis"], ["Queimados"], ["Quissamã"], ["Resende"], ["Rio Bonito"], ["Rio Claro"], ["Rio das Flores"], ["Rio das Ostras"], ["Rio de Janeiro"], ["Santa Maria Madalena"], ["Santo Antônio de Pádua"], ["São Fidélis"], ["São Francisco de Itabapoana"], ["São Gonçalo"], ["São João da Barra"], ["São João de Meriti"], ["São José de Ubá"], ["São José do Vale do Rio Preto"], ["São Pedro da Aldeia"], ["São Sebastião do Alto"], ["Sapucaia"], ["Saquarema"], ["Seropédica"], ["Silva Jardim"], ["Sumidouro"], ["Tanguá"], ["Teresópolis"], ["Trajano de Morais"], ["Três Rios"], ["Valença"], ["Varre-Sai"], ["Vassouras"], ["Volta Redonda"]
 	]],
@@ -133,93 +133,165 @@ function returnDefaultOptions(defaults, options){
     }
 }
 
-// Return states in SELECT.
-$.fn.states = function(options){
-	var print = "";
-	var defaults = {
-        value: false,
-    	text: false,
-    	current: ""
-    };
-
-   returnDefaultOptions(defaults, options);
-
-    var states_value = (defaults.value != undefined) ? defaults.value : '';
-    var states_text = (defaults.text != undefined) ? defaults.text : '';
-    var states_current = (defaults.current != undefined) ? defaults.current.toUpperCase() : '';
-
-	if (this[0].nodeName == "SELECT"){
-		STATES_array.forEach(function(x){
-			x1 = (states_value) ? x[1] : x[0];
-			x2 = (!states_text) ? x[1] : x[0];
-			xCurrent = (states_current == x[0].toUpperCase()) ? 'selected="selected"' : (states_current == x[1].toUpperCase()) ? 'selected="selected"' : '';
-
-			print += '<option ' + xCurrent + ' value="' + x1 + '">' + x2 + '</option>';
-		});
-	}
-	else {
-		alert("O retorno precisa ser em um SELECT!\nUse states.JSON() ou states.Array() para outros retornos!");
-		return false;
-	}
-
-	this.html(print);
-};
-
-// Return city in SELECT.
-$.fn.city = function(options){
-	var print = "";
-	var defaults = {
-        states: STATES_default,
-        current: ""
-    };
-
-   returnDefaultOptions(defaults, options);
-
-    var city_states = (defaults.states != undefined) ? defaults.states.toUpperCase() : '';
-    var city_current = (defaults.current != undefined) ? defaults.current.toUpperCase() : '';
-
-	if (this[0].nodeName == "SELECT"){
-		STATES_array_city.forEach(function(x){
-			if (x[0] == city_states){
-				x[1].forEach(function(arr){
-					xCurrent = (city_current == arr.toString().toUpperCase()) ? 'selected="selected"' : (city_current == arr.toString().toUpperCase()) ? 'selected="selected"' : '';
-					print += '<option ' + xCurrent + ' value="' + arr.toString() + '">' + arr.toString() + '</option>';
-				});
-			}
-		});
-	}
-	else {
-		alert("O retorno precisa ser em um SELECT!\nUse states.JSON() ou states.Array() para outros retornos!");
-		return false;
-	}
-
-	this.html(print);
-};
-
-// Return States Array.
-var states = {
-	Array: function(){
-		return STATES_array;
-	}
+function returnError(){
+	alert("Ocorreu um erro!\nVerifique a documentação.");
+	window.alert = function(){};
 }
 
-// Return City jSON and Array.
-var city = {
-	Array: function(options){
-		var print = [];
+
+(function(){
+	this.statesCitiesBR = function(options){
+		var states_print = "";
+		var cities_print = "";
 		var defaults = {
-	        states: STATES_default
-	    };
-
-	   returnDefaultOptions(defaults, options);
-	   var city_states = (defaults.states != undefined) ? defaults.states.toUpperCase() : '';
-
-		STATES_array_city.forEach(function(x){
-			if (x[0] == city_states){
-				print.push(x[1]);
+			states: {
+				elementID: false,
+				current: false,
+				arguments: {
+		        	before: false,
+		        	after: false,
+		        	defaultOption: false,
+		        	initial: false
+		        },
+		        defaultOption: false
+			},
+			cities: {
+				elementID: false,
+				state: false,
+				arguments: {
+		        	before: false,
+		        	after: false,
+		        	defaultOption: false
+		        },
+		        defaultOption: false
 			}
-		});
+	    };
+		
+		returnDefaultOptions(defaults, options);
 
-		return print[0];
-	},
-}
+
+		/*
+		 *	Estados.
+		 */
+		var states_this = (defaults.states.elementID != undefined) ? document.getElementById(defaults.states.elementID) : false;
+
+		if (states_this){
+			var states_element = (defaults.states.arguments != undefined) ? defaults.states.arguments : "";
+			var states_current = (defaults.states.current != undefined) ? defaults.states.current.toUpperCase() : "";
+
+			if (defaults.states.defaultOption != undefined){
+				states_print = '<option value="">' + defaults.states.defaultOption + '</option>';
+			}
+
+			if (states_element.defaultOption != undefined){
+				if (states_element.before != undefined && states_element.after != undefined){
+					states_print += states_element.before.slice(0, -1) + " data-value=''>" + states_element.defaultOption + states_element.after;
+				}
+				else {
+					returnError();
+				}
+			}
+
+			array_estados.forEach(function(value){
+				var xCurrent = (states_current == value[0].toUpperCase()) ? 'selected="selected"' : (states_current == value[1].toUpperCase()) ? 'selected="selected"' : '';
+				if (states_element){
+					if (states_element.before != undefined && states_element.after != undefined){
+						var initial = (states_element.initial) ? value[0] : value[1];
+						states_print += states_element.before.slice(0, -1) + " data-value='" + initial + "'>" + initial + states_element.after;
+					}
+					else {
+						returnError();
+					}
+				}
+				else {
+					states_print += '<option ' + xCurrent + ' value="' + value[0] + '">' + value[1] + '</option>';
+				}
+			});
+
+			if (states_this != null){
+				states_this.innerHTML = states_print;
+			}
+			else {
+				returnError();
+			}
+		}
+
+
+		/*
+		 *	Cidades.
+		 */
+		var cities_this = (defaults.cities.elementID != undefined) ? document.getElementById(defaults.cities.elementID) : false;
+
+		if (cities_this){
+			var cities_element = (defaults.cities.arguments != undefined) ? defaults.cities.arguments : "";
+			var cities_state = (defaults.cities.state != undefined) ? defaults.cities.state : "";
+
+			if (defaults.cities.defaultOption != undefined){
+				cities_print = '<option value="">' + defaults.cities.defaultOption + '</option>';
+			}
+
+			array_cities.forEach(function(value){
+				if (value[0] == cities_state){
+					value[1].forEach(function(arr){
+						if (cities_element){
+							if (cities_element.before != undefined && cities_element.after != undefined){
+								cities_print += cities_element.before.slice(0, -1) + " data-value='" + arr.toString() + "'>" + arr.toString() + cities_element.after;
+							}
+							else {
+								returnError();
+							}
+						}
+						else {
+							cities_print += '<option value="' + arr.toString() + '">' + arr.toString() + '</option>';
+						}
+					});
+				}
+			});
+
+			if (cities_state == "auto"){
+				var ce_elem = document.getElementById(defaults.states.elementID);
+				if (ce_elem != null){
+					ce_elem.onchange = function(){	
+						var cities_state_change = array_estados[this.selectedIndex][0];
+						cities_print = "";
+
+						array_cities.forEach(function(value){
+							if (value[0] == cities_state_change){
+								value[1].forEach(function(arr){
+									if (cities_element){
+										if (cities_element.before != undefined && cities_element.after != undefined){
+											cities_print += cities_element.before.slice(0, -1) + " data-value='" + arr.toString() + "'>" + arr.toString() + cities_element.after;
+										}
+										else {
+											returnError();
+										}
+									}
+									else {
+										cities_print += '<option value="' + arr.toString() + '">' + arr.toString() + '</option>';
+									}
+								});
+							}
+						});
+
+						if (cities_this != null){
+							cities_this.innerHTML = cities_print;
+						}
+						else {
+							returnError();
+						}
+					};
+				}
+				else {
+					returnError();
+				}
+			}
+
+			if (cities_this != null){
+				cities_this.innerHTML = cities_print;
+			}
+			else {
+				returnError();
+			}
+		}
+	}
+}());
