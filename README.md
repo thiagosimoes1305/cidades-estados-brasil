@@ -18,6 +18,7 @@ Abaixo segue as principais funcionalidades do script.
 ----------
 
 **Retornando os Estados:**
+
 *Através do **elementID** você coloca o ID do SELECT*.
 ```javascript
 new statesCitiesBR({
