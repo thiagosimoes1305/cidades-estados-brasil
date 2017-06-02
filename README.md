@@ -4,6 +4,9 @@ Código criado em JavaScript (sem uso de library) para retornar as Cidades e Est
 Abaixo segue as principais funcionalidades do script.
 
 ----------
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BFSUPFZNVNEUU" target="_blank"><img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_LG.gif" width="1" height="1"></a>
+----------
+
 
 ### Funcionalidades: 
 
