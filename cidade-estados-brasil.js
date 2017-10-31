@@ -2,7 +2,7 @@
  * Cidades e Estados Brasileiros
  * Example and Documentation: https://github.com/tedktedk/cidades-estados-brasil/blob/master/README.md
  *
- * Version: 2.1
+ * Version: 2.2
  *
  * Copyright (c) 2016 Ted k'
  * http://tedk.com.br/
@@ -139,6 +139,16 @@ function returnError(){
 	window.alert = function(){};
 }
 
+/**
+ * Remove acentos de strings
+ * @param  {String} string acentuada
+ * @return {String} string sem acento
+ * @author https://gist.github.com/hertz1
+ */
+var map={"â":"a","Â":"A","à":"a","À":"A","á":"a","Á":"A","ã":"a","Ã":"A","ê":"e","Ê":"E","è":"e","È":"E","é":"e","É":"E","î":"i","Î":"I","ì":"i","Ì":"I","í":"i","Í":"I","õ":"o","Õ":"O","ô":"o","Ô":"O","ò":"o","Ò":"O","ó":"o","Ó":"O","ü":"u","Ü":"U","û":"u","Û":"U","ú":"u","Ú":"U","ù":"u","Ù":"U","ç":"c","Ç":"C"};
+function removerAcentos(s){
+	return s.replace(/[\W\[\] ]/g,function(a){return map[a]||a});
+};
 
 (function(){
 	this.statesCitiesBR = function(options){
@@ -164,7 +174,8 @@ function returnError(){
 		        	after: false,
 		        	defaultOption: false
 		        },
-		        defaultOption: false
+		        defaultOption: false,
+		        current: false
 			}
 	    };
 		
@@ -226,6 +237,7 @@ function returnError(){
 		if (cities_this){
 			var cities_element = (defaults.cities.arguments != undefined) ? defaults.cities.arguments : "";
 			var cities_state = (defaults.cities.state != undefined) ? defaults.cities.state : "";
+			var cities_current = (defaults.cities.current != undefined) ? removerAcentos(defaults.cities.current.toUpperCase()) : "";
 
 			if (defaults.cities.defaultOption != undefined){
 				cities_print = '<option value="">' + defaults.cities.defaultOption + '</option>';
@@ -243,16 +255,17 @@ function returnError(){
 			array_cities.forEach(function(value){
 				if (value[0] == cities_state){
 					value[1].forEach(function(arr){
+						var xCurrent = (cities_current == removerAcentos(arr.toString().toUpperCase())) ? 'selected="selected"' : '';
 						if (cities_element){
 							if (cities_element.before != undefined && cities_element.after != undefined){
-								cities_print += cities_element.before.slice(0, -1) + " data-value='" + arr.toString() + "'>" + arr.toString() + cities_element.after;
+								cities_print += cities_element.before.slice(0, -1) + ' data-value="' + arr.toString() + '" ' + xCurrent + '>' + arr.toString() + cities_element.after;
 							}
 							else {
 								returnError();
 							}
 						}
 						else {
-							cities_print += '<option value="' + arr.toString() + '">' + arr.toString() + '</option>';
+							cities_print += '<option ' + xCurrent + ' value="' + arr.toString() + '">' + arr.toString() + '</option>';
 						}
 					});
 				}
@@ -262,22 +275,24 @@ function returnError(){
 				var ce_elem = document.getElementById(defaults.states.elementID);
 				if (ce_elem != null){
 					ce_elem.onchange = function(){
-						var cities_state_change = array_estados[this.selectedIndex - 1][0];
+						var cities_current = (defaults.cities.current != undefined) ? removerAcentos(defaults.cities.current.toUpperCase()) : "";
+						var cities_state_change = (defaults.states.defaultOption != undefined) ? array_estados[this.selectedIndex - 1][0] : array_estados[this.selectedIndex][0];
 						cities_print = "";
 
 						array_cities.forEach(function(value){
 							if (value[0] == cities_state_change){
 								value[1].forEach(function(arr){
+									var xCurrent = (cities_current == removerAcentos(arr.toString().toUpperCase())) ? 'selected="selected"' : '';
 									if (cities_element){
 										if (cities_element.before != undefined && cities_element.after != undefined){
-											cities_print += cities_element.before.slice(0, -1) + " data-value='" + arr.toString() + "'>" + arr.toString() + cities_element.after;
+											cities_print += cities_element.before.slice(0, -1) + ' data-value="' + arr.toString() + '" ' + xCurrent + '>' + arr.toString() + cities_element.after;
 										}
 										else {
 											returnError();
 										}
 									}
 									else {
-										cities_print += '<option value="' + arr.toString() + '">' + arr.toString() + '</option>';
+										cities_print += '<option ' + xCurrent + ' value="' + arr.toString() + '">' + arr.toString() + '</option>';
 									}
 								});
 							}
@@ -290,6 +305,9 @@ function returnError(){
 							returnError();
 						}
 					};
+					if (defaults.states.current != undefined) {
+						ce_elem.onchange();
+					}
 				}
 				else {
 					returnError();
