@@ -26,7 +26,7 @@ Faça sua doação e ajude a manter o projeto: <a href="https://www.paypal.com/c
 
 > - [Retorno de todas as Cidades de um Estado / Escolha do texto option padrão, exemplo: "Selecione uma Cidade"](https://github.com/tedktedk/cidades-estados-brasil#retorno-de-todas-as-cidades-de-um-estado--escolha-do-texto-option-padrão-exemplo-selecione-uma-cidade);
 > - [Alterar o padrão de retorno através de argumentos](https://github.com/tedktedk/cidades-estados-brasil#alterar-o-padrão-de-retorno-através-de-argumentos);
-> - OBS: Não tem a opção de "Marcar uma Cidade" devido aos problemas de acentos e espaços (serão corrigidos na próxima versão);
+> - [Marcar a cidade na lista](https://github.com/tedktedk/cidades-estados-brasil#marcando-uma-cidade-na-lista);
 
 ----------
 
@@ -177,6 +177,26 @@ new statesCitiesBR({
 
 Resultado final: [https://jsfiddle.net/ted_k/r4532rfp/](https://jsfiddle.net/ted_k/r4532rfp/)
 
+
+----------
+
+#### **Marcando uma Cidade na lista:**
+
+*Através do **current** você adiciona o NOME da Cidade*.
+Para que a opção **current** em *cities* funcione é obrigatório o uso das opções **current** em *states* e **state** deve ter o valor **auto** em *cities*.
+```javascript
+new statesCitiesBR({
+	states: {
+		elementID: "lista_estados",
+		current: "BA"
+	},
+	cities: {
+		elementID: "lista_cidades",
+		state: "auto",
+		current: "Salvador"
+	}
+});
+```
 
 ----------
 
