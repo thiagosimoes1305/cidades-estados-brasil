@@ -5,7 +5,7 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-Faça sua doação e ajude a manter o projeto: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BFSUPFZNVNEUU" target="_blank"><img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_LG.gif"></a>
+Faça sua doação: <a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
 
 ----------
 
@@ -229,6 +229,6 @@ Resultado final: [https://jsfiddle.net/ted_k/d492hcje/](https://jsfiddle.net/ted
 
 ----------
 
-Faça sua doação e ajude a manter o projeto: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BFSUPFZNVNEUU" target="_blank"><img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_LG.gif"></a>
+Faça sua doação: <a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
 
 ----------
