@@ -5,7 +5,7 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-Faça sua doação: <a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
+<a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
 
 ----------
 
