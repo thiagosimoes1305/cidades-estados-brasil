@@ -214,7 +214,7 @@ new statesCitiesBR({
 		current: "Salvador"
 	}
 });
-
+```
 ----------
 
 * **OBS:** Para usar em uma LISTA é necessário usar os objetos separados e só funcionará com o "states" usando pouco de javascript para restagar o valor de um atributo, o "data-uf". *
