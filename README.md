@@ -5,7 +5,8 @@ Abaixo segue as principais funcionalidades do script.
 
 ----------
 
-<a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
+## Última atualização:
+**15 de setembro de 2021**
 
 ----------
 
@@ -97,7 +98,7 @@ new statesCitiesBR({
 });
 ```
 
-Resultado final: [https://jsfiddle.net/ted_k/uh98tbjf/](https://jsfiddle.net/ted_k/uh98tbjf/)
+Resultado final: [https://jsfiddle.net/ted_k/uh98tbjf/2/](https://jsfiddle.net/ted_k/uh98tbjf/2/)
 
 ----------
 
@@ -133,7 +134,7 @@ new statesCitiesBR({
 	}
 });
 ```
-Resultado final: [https://jsfiddle.net/ted_k/2aL90f8e/](https://jsfiddle.net/ted_k/2aL90f8e/)
+Resultado final: [https://jsfiddle.net/ted_k/2aL90f8e/1/](https://jsfiddle.net/ted_k/2aL90f8e/1/)
 
 
 ----------
@@ -153,7 +154,7 @@ new statesCitiesBR({
 	}
 });
 ```
-Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/1/](https://jsfiddle.net/ted_k/5v0kfsr0/1/)
+Resultado final: [https://jsfiddle.net/ted_k/5v0kfsr0/26/](https://jsfiddle.net/ted_k/5v0kfsr0/26/)
 
 ----------
 
@@ -175,33 +176,9 @@ new statesCitiesBR({
 ```
 *O **defaultOption**, também pode ser usado dentro do arguments.*
 
-Resultado final: [https://jsfiddle.net/ted_k/r4532rfp/](https://jsfiddle.net/ted_k/r4532rfp/)
-
-
-----------
-
-#### **Marcando uma Cidade na lista:**
-
-*Através do **current** você adiciona o NOME da Cidade*.
-Para que a opção **current** em *cities* funcione é obrigatório o uso das opções **current** em *states* e **state** deve ter o valor **auto** em *cities*.
-```javascript
-new statesCitiesBR({
-	states: {
-		elementID: "lista_estados",
-		current: "BA"
-	},
-	cities: {
-		elementID: "lista_cidades",
-		state: "auto",
-		current: "Salvador"
-	}
-});
-```
+Resultado final: [https://jsfiddle.net/ted_k/r4532rfp/6/](https://jsfiddle.net/ted_k/r4532rfp/6/)
 
 ----------
-
-----------
-
 
 #### **Usando o Estado para retornar as Cidades:**
 
@@ -219,16 +196,10 @@ new statesCitiesBR({
 	}
 });
 ```
-Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/](https://jsfiddle.net/ted_k/5vqnmLad/)
+Resultado final: [https://jsfiddle.net/ted_k/5vqnmLad/11/](https://jsfiddle.net/ted_k/5vqnmLad/11/)
 
 ----------
 
 * **OBS:** Para usar em uma LISTA é necessário usar os objetos separados e só funcionará com o "states" usando pouco de javascript para restagar o valor de um atributo, o "data-uf". *
 
-Resultado final: [https://jsfiddle.net/ted_k/d492hcje/](https://jsfiddle.net/ted_k/d492hcje/)
-
-----------
-
-Faça sua doação: <a href="https://pag.ae/bgwYhxd"><img src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/164x37-doar-assina.gif" border="0" /></a>
-
-----------
+Resultado final: [https://jsfiddle.net/ted_k/d492hcje/11/](https://jsfiddle.net/ted_k/d492hcje/11/)
